@@ -1,1 +1,1 @@
-alert("Welcome to my Burger Project!")
+console.log("Welcome to my Burger Project!")
