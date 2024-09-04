@@ -1,6 +1,10 @@
+const restaurantMenuElement = document.getElementById('restaurant-menu')
+
 // This is a function that will add a burger image to the restaurant menu when the function is called.
 function addBurgerImageToRestaurantMenu(burger){
-    console.log(burger)
+    const imgElement = document.createElement('img')
+    imgElement.src = burger.image
+    restaurantMenuElement.appendChild(imgElement)
 }
 
 fetch("http://localhost:3000/burgers")
