@@ -5,6 +5,14 @@ function addBurgerImageToRestaurantMenu(burger){
     const imgElement = document.createElement('img')
     imgElement.src = burger.image
     restaurantMenuElement.appendChild(imgElement)
+
+    imgElement.addEventListener('mouseover', () => {
+        displayBurgerDetails(burger)
+    })
+
+    imgElement.addEventListener('click', () => {
+        imgElement.remove()
+    })
 }
 
 function displayBurgerDetails(burger){
