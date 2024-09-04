@@ -1,1 +1,4 @@
-alert("Welcome to my Burger Project!")
+const person = {
+    name: "Alice",
+    age: 23
+}
