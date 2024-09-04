@@ -1,5 +1,7 @@
 const restaurantMenuElement = document.getElementById('restaurant-menu')
 
+let lastBurgerId = 0
+
 // This is a function that will add a burger image to the restaurant menu when the function is called.
 function addBurgerImageToRestaurantMenu(burger){
     const imgElement = document.createElement('img')
@@ -29,6 +31,27 @@ function displayBurgerDetails(burger){
     burgerPriceElement.textContent = `$${burger.price}`
 }
 
+function handleSubmit(event){
+    event.preventDefault()
+    
+    const newNameInputElement = document.getElementById('new-name')
+    const newImageInputElement = document.getElementById('new-image')
+    const newPriceInputElement = document.getElementById('new-price')
+
+    const newBurger = {
+        id: lastBurgerId + 1,
+        name: newNameInputElement.value,
+        image: newImageInputElement.value,
+        price: Number(newPriceInputElement.value)
+    }
+
+    addBurgerImageToRestaurantMenu(newBurger)
+
+    lastBurgerId++
+    
+    event.target.reset()
+}
+
 fetch("http://localhost:3000/burgers")
 .then(response => response.json())
 .then(burgers => {
@@ -39,7 +62,9 @@ fetch("http://localhost:3000/burgers")
     }
     else{
         displayBurgerDetails(burgers[0])
+        lastBurgerId = burgers[burgers.length - 1].id
     }
 })
 
-// At some point, we'll search for a <form> from the DOM (<form> doesn't exist yet, so we'll need to add it to the index.html file)
+const newBurgerFormElement = document.getElementById('new-burger-form')
+newBurgerFormElement.addEventListener('submit', handleSubmit)
