@@ -8,7 +8,17 @@ function addBurgerImageToRestaurantMenu(burger){
 }
 
 function displayBurgerDetails(burger){
-    console.log(burger)
+    const burgerIdElement = document.getElementById("burger-id")
+    burgerIdElement.textContent = `Burger # ${burger.id}`
+
+    const burgerImageElement = document.getElementById('burger-image')
+    burgerImageElement.src = burger.image
+
+    const burgerNameElement = document.getElementById('burger-name')
+    burgerNameElement.textContent = burger.name
+
+    const burgerPriceElement = document.getElementById('burger-price')
+    burgerPriceElement.textContent = `$${burger.price}`
 }
 
 fetch("http://localhost:3000/burgers")
