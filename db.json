@@ -17,6 +17,12 @@
             "name": "Mushroom Burger",
             "price": 11.99,
             "image": "images/mushroom-burger.png"
+        },
+        {
+            "id": 4,
+            "name": "Ramen Burger",
+            "price": 13.99,
+            "image": "images/ramen-burger.png"
         }
     ]
 }
