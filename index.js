@@ -1,7 +1,5 @@
-alert("Welcome to Flatburger!")
-console.log("This is the best burger project ever!")
-
-const person = {
-    name: "Alice",
-    age: 23
-}
+fetch("http://localhost:3000/burgers")
+.then(response => response.json())
+.then(burgers => {
+    console.log(burgers)
+})
