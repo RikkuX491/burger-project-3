@@ -23,6 +23,12 @@
             "name": "Ramen Burger",
             "price": 13.99,
             "image": "images/ramen-burger.png"
+        },
+        {
+            "id": 5,
+            "name": "Avocado Bun Burger",
+            "price": 7.99,
+            "image": "images/avocado-bun-burger.png"
         }
     ]
 }
